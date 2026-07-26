@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Offsets scroll targets so content isn't hidden under the fixed header */
+#about,
+#process,
+#programmes,
+#faq,
+#contact {
+  scroll-margin-top: 5rem;
+}
