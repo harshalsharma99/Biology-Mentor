@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        heading: ['Sora', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
     },
   },

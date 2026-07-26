@@ -9,9 +9,9 @@ export default function PreetiPhoto({ className = '' }) {
 
   if (failed) {
     return (
-      <div className={`flex flex-col items-center justify-center bg-gradient-to-br from-[#4A9B6F] to-[#3A8AC0] text-white ${className}`}>
-        <Dna className="w-14 h-14 mb-3 opacity-90" />
-        <span className="text-3xl font-bold tracking-wide">PB</span>
+      <div className={`flex flex-col items-center justify-center bg-gradient-to-br from-[#0F2A24] via-[#122036] to-[#1a1030] text-[#34E7C6] ${className}`}>
+        <Dna className="w-14 h-14 mb-3 drop-shadow-[0_0_10px_rgba(52,231,198,0.6)]" />
+        <span className="text-3xl font-heading font-bold tracking-wide text-white">PB</span>
       </div>
     );
   }

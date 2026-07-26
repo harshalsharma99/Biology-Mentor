@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ClipboardCheck, Route, Video, TrendingUp } from 'lucide-react';
 
+const ACCENT = '#6EE7A8';
+
 const steps = [
   {
     number: '01',
@@ -36,10 +38,18 @@ const steps = [
   },
 ];
 
+const PILLS = [
+  { label: '1:1 Private Sessions', color: '#6EE7A8' },
+  { label: 'Small Groups (Max 4-6)', color: '#34E7C6' },
+  { label: 'Online & In-Person', color: '#B07CFF' },
+];
+
 export default function HowItWorks() {
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-b from-white to-[#F7FAF8]">
-      <div className="container mx-auto px-5 md:px-8">
+    <section className="py-20 md:py-28 bg-[#0A0E12] relative overflow-hidden">
+      <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[40rem] h-[20rem] bg-[#6EE7A8]/6 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="container mx-auto px-5 md:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -47,15 +57,15 @@ export default function HowItWorks() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-14"
         >
-          <span className="text-[#4A7C59] font-medium text-sm tracking-wider uppercase mb-3 block">Simple Process</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1A2E23] mb-4">How It Works</h2>
-          <p className="text-[#556] text-lg">
+          <span className="text-[#6EE7A8] font-medium text-sm tracking-wider uppercase mb-3 block">Simple Process</span>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">How It Works</h2>
+          <p className="text-[#8A9A95] text-lg">
             A clear, structured path — whether you're targeting board exams, A-Levels, NEET or Olympiads
           </p>
         </motion.div>
 
         <div className="relative">
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-[#4A7C59]/20 via-[#4A7C59]/40 to-[#4A7C59]/20 -translate-y-1/2 z-0" />
+          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#6EE7A8]/40 to-transparent -translate-y-1/2 z-0" />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 relative z-10">
             {steps.map((step, index) => (
@@ -67,27 +77,37 @@ export default function HowItWorks() {
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 className="relative"
               >
-                <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#F0F0F0] h-full group">
+                <div
+                  className="bg-white/[0.03] hover:bg-white/[0.06] rounded-2xl p-6 border transition-all duration-300 h-full group"
+                  style={{ borderColor: `${ACCENT}33` }}
+                >
                   <div className="flex items-center gap-3 mb-5">
-                    <span className="text-4xl font-bold text-[#4A7C59]/20 group-hover:text-[#4A7C59]/30 transition-colors">
-                      {step.number}
-                    </span>
-                    <div className="w-12 h-12 bg-[#4A7C59] rounded-xl flex items-center justify-center shadow-lg shadow-[#4A7C59]/20">
-                      <step.icon className="w-6 h-6 text-white" />
+                    <span className="font-heading text-4xl font-bold text-white/10">{step.number}</span>
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center"
+                      style={{ backgroundColor: `${ACCENT}18`, boxShadow: `0 0 20px ${ACCENT}30` }}
+                    >
+                      <step.icon className="w-6 h-6" style={{ color: ACCENT }} />
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-semibold text-[#1A1A1A] mb-3">{step.title}</h3>
-                  <p className="text-[#666] leading-relaxed mb-4">{step.description}</p>
+                  <h3 className="font-heading text-xl font-semibold text-white mb-3">{step.title}</h3>
+                  <p className="text-[#9FADA8] leading-relaxed mb-4">{step.description}</p>
 
-                  <span className="inline-block text-xs font-medium text-[#4A7C59] bg-[#4A7C59]/10 px-3 py-1 rounded-full">
+                  <span
+                    className="inline-block text-xs font-medium px-3 py-1 rounded-full"
+                    style={{ color: ACCENT, backgroundColor: `${ACCENT}18` }}
+                  >
                     {step.highlight}
                   </span>
                 </div>
 
                 {index < steps.length - 1 && (
                   <div className="hidden lg:block absolute top-1/2 -right-2 transform -translate-y-1/2 z-20">
-                    <div className="w-4 h-4 bg-[#4A7C59] rounded-full" />
+                    <div
+                      className="w-3 h-3 rounded-full"
+                      style={{ backgroundColor: ACCENT, boxShadow: `0 0 10px ${ACCENT}` }}
+                    />
                   </div>
                 )}
               </motion.div>
@@ -103,18 +123,16 @@ export default function HowItWorks() {
           className="mt-14 text-center"
         >
           <div className="inline-flex flex-wrap justify-center gap-4">
-            <div className="flex items-center gap-2 bg-white px-5 py-3 rounded-full border border-[#E8E8E8] shadow-sm">
-              <div className="w-2 h-2 bg-[#4A7C59] rounded-full" />
-              <span className="text-[#444] font-medium">1:1 Private Sessions</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white px-5 py-3 rounded-full border border-[#E8E8E8] shadow-sm">
-              <div className="w-2 h-2 bg-[#2D6A7A] rounded-full" />
-              <span className="text-[#444] font-medium">Small Groups (Max 4-6)</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white px-5 py-3 rounded-full border border-[#E8E8E8] shadow-sm">
-              <div className="w-2 h-2 bg-[#E07A5F] rounded-full" />
-              <span className="text-[#444] font-medium">Online &amp; In-Person</span>
-            </div>
+            {PILLS.map((pill) => (
+              <div
+                key={pill.label}
+                className="flex items-center gap-2 bg-white/[0.03] px-5 py-3 rounded-full border"
+                style={{ borderColor: `${pill.color}40` }}
+              >
+                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: pill.color, boxShadow: `0 0 6px ${pill.color}` }} />
+                <span className="text-[#D8E0DC] font-medium">{pill.label}</span>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>

@@ -51,14 +51,8 @@ export default function FAQ() {
   const toggleFaq = (index) => setOpenIndex(openIndex === index ? -1 : index);
 
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-b from-[#F0FBF4] to-white relative overflow-hidden">
-      <div className="absolute top-10 right-10 w-40 h-40 opacity-[0.05] pointer-events-none">
-        <svg viewBox="0 0 200 200" fill="none">
-          <ellipse cx="100" cy="100" rx="90" ry="70" stroke="#4A9B6F" strokeWidth="2" />
-          <ellipse cx="100" cy="100" rx="55" ry="42" stroke="#4A9B6F" strokeWidth="1.5" />
-          <circle cx="100" cy="100" r="22" fill="#4A9B6F" />
-        </svg>
-      </div>
+    <section className="py-20 md:py-28 bg-[#0A0E12] relative overflow-hidden">
+      <div className="absolute top-10 right-10 w-[26rem] h-[26rem] bg-[#34E7C6]/8 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-5 md:px-8 relative z-10">
         <motion.div
@@ -68,9 +62,9 @@ export default function FAQ() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-14"
         >
-          <span className="text-[#4A9B6F] font-medium text-sm tracking-wider uppercase mb-3 block">Common Questions</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1A2E23] mb-4">Frequently Asked Questions</h2>
-          <p className="text-[#556] text-lg">Everything you need to know before getting started</p>
+          <span className="text-[#34E7C6] font-medium text-sm tracking-wider uppercase mb-3 block">Common Questions</span>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
+          <p className="text-[#8A9A95] text-lg">Everything you need to know before getting started</p>
         </motion.div>
 
         <div className="max-w-3xl mx-auto">
@@ -85,14 +79,14 @@ export default function FAQ() {
             >
               <button
                 onClick={() => toggleFaq(index)}
-                className={`w-full flex items-center justify-between p-5 text-left rounded-xl transition-all duration-200 ${
+                className={`w-full flex items-center justify-between p-5 text-left rounded-xl transition-all duration-200 border ${
                   openIndex === index
-                    ? 'bg-[#4A9B6F] text-white shadow-lg shadow-[#4A9B6F]/20'
-                    : 'bg-white hover:bg-[#F0FBF4] text-[#1A2E23] border border-[#E0EEE8]'
+                    ? 'bg-gradient-to-r from-[#34E7C6] to-[#6EE7A8] text-[#06120F] border-transparent shadow-[0_0_24px_rgba(52,231,198,0.3)]'
+                    : 'bg-white/[0.03] hover:bg-white/[0.06] text-white border-white/10'
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <HelpCircle className={`w-5 h-5 flex-shrink-0 ${openIndex === index ? 'text-white/80' : 'text-[#4A9B6F]'}`} />
+                  <HelpCircle className={`w-5 h-5 flex-shrink-0 ${openIndex === index ? 'text-[#06120F]/70' : 'text-[#34E7C6]'}`} />
                   <span className="font-medium pr-4">{faq.question}</span>
                 </div>
                 <ChevronDown
@@ -109,8 +103,8 @@ export default function FAQ() {
                     transition={{ duration: 0.2 }}
                     className="overflow-hidden"
                   >
-                    <div className="p-5 pt-4 bg-white border border-t-0 border-[#E0EEE8] rounded-b-xl">
-                      <p className="text-[#445] leading-relaxed pl-8">{faq.answer}</p>
+                    <div className="p-5 pt-4 bg-white/[0.03] border border-t-0 border-white/10 rounded-b-xl">
+                      <p className="text-[#B9C4C0] leading-relaxed pl-8">{faq.answer}</p>
                     </div>
                   </motion.div>
                 )}

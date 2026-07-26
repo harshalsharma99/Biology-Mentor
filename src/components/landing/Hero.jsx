@@ -1,30 +1,36 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { MessageCircle, Calendar, CheckCircle, ChevronDown, Star } from 'lucide-react';
+import { MessageCircle, Calendar, ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { whatsappLink } from '@/config/site';
+import { whatsappLink, siteConfig } from '@/config/site';
 import { scrollToId } from '@/lib/scroll';
-import PreetiPhoto from './PreetiPhoto';
 
-const CellSVG = () => (
-  <svg viewBox="0 0 200 200" className="w-full h-full" fill="none">
-    <ellipse cx="100" cy="100" rx="90" ry="70" stroke="#4A9B6F" strokeWidth="1.5" strokeDasharray="4 3" opacity="0.5" />
-    <ellipse cx="100" cy="100" rx="60" ry="45" stroke="#4A9B6F" strokeWidth="1" opacity="0.4" />
-    <circle cx="100" cy="100" r="22" fill="#6EC89A" opacity="0.3" />
-    <circle cx="100" cy="100" r="14" fill="#3D8B64" opacity="0.4" />
-    <circle cx="68" cy="82" r="7" fill="#7ED9A8" opacity="0.35" />
-    <circle cx="132" cy="118" r="9" fill="#7ED9A8" opacity="0.3" />
-    <circle cx="125" cy="78" r="5" fill="#7ED9A8" opacity="0.3" />
-    <circle cx="75" cy="122" r="6" fill="#7ED9A8" opacity="0.3" />
-    <circle cx="140" cy="95" r="4" fill="#5BC490" opacity="0.35" />
+const DNAHelix = () => (
+  <svg viewBox="0 0 260 360" className="w-[70%] h-[70%]" fill="none">
+    <g stroke="#34E7C6" strokeWidth="2.2" opacity="0.9">
+      <path d="M60,10 C 200,60 60,120 200,170 C 60,220 200,280 60,340" />
+      <path d="M200,10 C 60,60 200,120 60,170 C 200,220 60,280 200,340" />
+    </g>
+    <g stroke="#6EE7A8" strokeWidth="1.6" opacity="0.8">
+      <line x1="60" y1="30" x2="200" y2="30" />
+      <line x1="90" y1="70" x2="170" y2="70" />
+      <line x1="60" y1="120" x2="200" y2="120" />
+      <line x1="90" y1="170" x2="170" y2="170" />
+      <line x1="60" y1="220" x2="200" y2="220" />
+      <line x1="90" y1="270" x2="170" y2="270" />
+      <line x1="60" y1="320" x2="200" y2="320" />
+    </g>
+    <g fill="#34E7C6">
+      <circle cx="60" cy="30" r="5" /><circle cx="200" cy="30" r="5" />
+      <circle cx="90" cy="70" r="4" /><circle cx="170" cy="70" r="4" />
+      <circle cx="60" cy="120" r="5" /><circle cx="200" cy="120" r="5" />
+      <circle cx="90" cy="170" r="4" /><circle cx="170" cy="170" r="4" />
+      <circle cx="60" cy="220" r="5" /><circle cx="200" cy="220" r="5" />
+      <circle cx="90" cy="270" r="4" /><circle cx="170" cy="270" r="4" />
+      <circle cx="60" cy="320" r="5" /><circle cx="200" cy="320" r="5" />
+    </g>
   </svg>
 );
-
-const FLOATING_DOTS = [
-  { top: '12%', left: '6%', size: 8, color: '#4A9B6F', opacity: 0.25 },
-  { top: '75%', left: '4%', size: 5, color: '#5BB8E8', opacity: 0.3 },
-  { top: '20%', left: '42%', size: 6, color: '#A8E6CF', opacity: 0.35 },
-];
 
 const STATS = [
   { number: '2000+', label: 'Students Mentored' },
@@ -34,30 +40,11 @@ const STATS = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-gradient-to-br from-[#F0FBF4] via-[#FAFFFE] to-[#EEF7FF]">
-      <div className="absolute top-10 right-0 w-[32rem] h-[32rem] bg-[#4A9B6F]/12 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-10 w-96 h-96 bg-[#5BB8E8]/10 rounded-full blur-3xl" />
-      <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-[#A8E6CF]/20 rounded-full blur-3xl" />
-
-      <div className="absolute top-6 left-4 w-40 h-40 opacity-40 pointer-events-none hidden md:block">
-        <CellSVG />
+    <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-[#0A0E12]">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-[8%] right-[10%] w-[36rem] h-[36rem] bg-[#34E7C6]/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-[5%] left-[8%] w-[28rem] h-[28rem] bg-[#B07CFF]/10 rounded-full blur-3xl" />
       </div>
-
-      {FLOATING_DOTS.map((dot, i) => (
-        <div
-          key={i}
-          className="absolute rounded-full pointer-events-none"
-          style={{
-            top: dot.top,
-            left: dot.left,
-            right: dot.right,
-            width: dot.size,
-            height: dot.size,
-            backgroundColor: dot.color,
-            opacity: dot.opacity,
-          }}
-        />
-      ))}
 
       <div className="container mx-auto px-5 md:px-8 py-24 md:py-28 relative z-10">
         <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-16 items-center">
@@ -66,10 +53,10 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-[#4A9B6F]/25 rounded-full px-4 py-2 mb-6 shadow-sm"
+              className="inline-flex items-center gap-2 bg-[#B07CFF]/10 backdrop-blur-sm border border-[#B07CFF]/40 rounded-full px-4 py-2 mb-6"
             >
-              <span className="w-2 h-2 bg-[#4A9B6F] rounded-full animate-pulse" />
-              <span className="text-sm text-[#2D7A52] font-medium">
+              <span className="w-2 h-2 bg-[#B07CFF] rounded-full shadow-[0_0_8px_#B07CFF] animate-pulse" />
+              <span className="text-sm text-[#D3BFFF] font-medium">
                 For IGCSE, A-Level, CBSE &amp; ICSE Students in Years 9-13 &middot; Dubai &amp; UAE
               </span>
             </motion.div>
@@ -78,37 +65,41 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-[3.4rem] font-bold text-[#1A2E23] leading-[1.12] tracking-tight mb-6"
+              className="font-heading text-4xl md:text-5xl lg:text-[3.4rem] font-bold text-white leading-[1.12] tracking-tight mb-6"
             >
-              Expert Biology Coaching for <span className="text-[#4A9B6F]">IGCSE, A-Level,</span>{' '}
-              <span className="text-[#3A8AC0]">CBSE &amp; ICSE</span> Students in Dubai
+              Turn Biology{' '}
+              <span className="bg-gradient-to-r from-[#34E7C6] to-[#6EE7A8] bg-clip-text text-transparent">
+                confusion
+              </span>{' '}
+              into{' '}
+              <span className="bg-gradient-to-r from-[#B07CFF] to-[#FF7CA3] bg-clip-text text-transparent">
+                exam-ready
+              </span>{' '}
+              confidence
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg md:text-xl text-[#445] leading-relaxed mb-8 max-w-xl"
+              className="text-lg md:text-xl text-[#B9C4C0] leading-relaxed mb-8 max-w-xl"
             >
-              Personalised online support from <span className="font-semibold text-[#1A2E23]">Ms. Preeti Bhardwaj</span> — an
-              experienced Biology mentor helping students move from confusion to confidence, and from average grades to{' '}
-              <span className="font-semibold text-[#4A9B6F]">A/A*</span>. Also supporting{' '}
-              <span className="font-semibold text-[#3A8AC0]">NEET prep, Olympiads &amp; competitive exams</span>.
+              Personalised online support from <span className="font-semibold text-white">Ms. Preeti Bhardwaj</span> —
+              an experienced Biology mentor helping students move from confusion to confidence, and from average
+              grades to <span className="font-semibold text-[#34E7C6]">A/A*</span>. Also supporting{' '}
+              <span className="font-semibold text-[#D3BFFF]">NEET prep, Olympiads &amp; competitive exams</span>.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap gap-6 mb-10"
+              className="flex flex-wrap gap-8 mb-10"
             >
               {STATS.map((stat, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#4A9B6F]" />
-                  <div>
-                    <span className="font-bold text-[#1A2E23]">{stat.number}</span>
-                    <span className="text-[#556] ml-1 text-sm">{stat.label}</span>
-                  </div>
+                <div key={index}>
+                  <span className="font-heading font-bold text-2xl text-white block">{stat.number}</span>
+                  <span className="text-[#8A9A95] text-sm">{stat.label}</span>
                 </div>
               ))}
             </motion.div>
@@ -121,7 +112,7 @@ export default function Hero() {
             >
               <Button
                 onClick={() => scrollToId('contact')}
-                className="bg-[#E07A5F] hover:bg-[#C86A50] text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg shadow-[#E07A5F]/25 hover:shadow-xl hover:-translate-y-0.5"
+                className="bg-gradient-to-r from-[#34E7C6] to-[#6EE7A8] hover:brightness-110 text-[#06120F] px-8 py-6 text-lg font-bold rounded-xl shadow-[0_0_30px_rgba(52,231,198,0.4)] hover:shadow-[0_0_40px_rgba(52,231,198,0.55)] hover:-translate-y-0.5"
               >
                 <Calendar className="w-5 h-5 mr-2" />
                 Book a Free Discovery Session
@@ -133,9 +124,9 @@ export default function Hero() {
               >
                 <Button
                   variant="outline"
-                  className="border-2 border-[#25D366] text-[#1A8C40] hover:bg-[#25D366] hover:text-white px-8 py-6 text-lg font-semibold rounded-xl"
+                  className="border-2 border-white/20 text-white hover:bg-white/5 hover:border-[#25D366]/60 px-8 py-6 text-lg font-semibold rounded-xl"
                 >
-                  <MessageCircle className="w-5 h-5 mr-2" />
+                  <MessageCircle className="w-5 h-5 mr-2 text-[#25D366]" />
                   Chat on WhatsApp
                 </Button>
               </a>
@@ -148,14 +139,14 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative hidden lg:block"
           >
-            <div className="absolute -inset-5 rounded-[2rem] bg-gradient-to-br from-[#4A9B6F]/20 to-[#5BB8E8]/20 blur-2xl" />
+            <div className="absolute -inset-5 rounded-[2rem] bg-gradient-to-br from-[#34E7C6]/15 to-[#B07CFF]/15 blur-2xl" />
 
-            <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5] bg-gradient-to-br from-[#E8F8F0] to-[#E8F4FB] shadow-2xl">
-              <PreetiPhoto className="w-full h-full" />
-              <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#1A2E23]/40 to-transparent" />
+            <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5] bg-[#0d1512] border border-[#34E7C6]/30 shadow-[0_0_60px_rgba(52,231,198,0.15)]">
+              <HeroVisual />
+              <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-5 left-5 right-5 text-white">
-                <p className="font-bold text-lg">Ms. Preeti Bhardwaj</p>
-                <p className="text-white/80 text-sm">Biology Mentor &middot; Dubai</p>
+                <p className="font-heading font-bold text-lg">Ms. Preeti Bhardwaj</p>
+                <p className="text-white/70 text-sm">Biology Mentor &middot; Dubai</p>
               </div>
             </div>
 
@@ -163,16 +154,10 @@ export default function Hero() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="absolute -left-6 top-10 bg-white rounded-2xl p-4 shadow-xl border border-[#E8F5EE]"
+              className="absolute -left-6 top-10 bg-[#0A0E12] border border-[#34E7C6]/40 rounded-2xl p-4 shadow-[0_0_24px_rgba(52,231,198,0.25)]"
             >
-              <div className="flex items-center gap-2">
-                <div className="flex -space-x-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-[#F4B942] fill-[#F4B942]" />
-                  ))}
-                </div>
-              </div>
-              <p className="text-xs text-[#556] mt-1">Trusted by 2000+ families</p>
+              <p className="text-xs text-[#8A9A95]">Trusted by</p>
+              <p className="text-lg font-heading font-bold text-[#34E7C6]">2000+ families</p>
             </motion.div>
           </motion.div>
         </div>
@@ -182,10 +167,33 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 8, 0] }}
         transition={{ duration: 1.5, repeat: Infinity, delay: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#4A9B6F]/50"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#34E7C6]/60"
       >
         <ChevronDown className="w-8 h-8" />
       </motion.div>
     </section>
+  );
+}
+
+// Shows the glowing DNA illustration until a real photo is dropped at
+// /public/images/preeti-bhardwaj.jpg, then switches to it automatically.
+function HeroVisual() {
+  const [imgFailed, setImgFailed] = React.useState(false);
+
+  if (imgFailed) {
+    return (
+      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#0F2A24] via-[#0d1512] to-[#1a1030]">
+        <DNAHelix />
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src="/images/preeti-bhardwaj.jpg"
+      alt={`${siteConfig.mentorName} — The Biology Mentor`}
+      className="w-full h-full object-cover object-top"
+      onError={() => setImgFailed(true)}
+    />
   );
 }

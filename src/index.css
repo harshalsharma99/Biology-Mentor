@@ -7,8 +7,15 @@ html {
 }
 
 body {
+  background-color: #0a0e12;
+  color: #eaf1ee;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: rgba(52, 231, 198, 0.3);
+  color: #eaf1ee;
 }
 
 /* Offsets scroll targets so content isn't hidden under the fixed header */
