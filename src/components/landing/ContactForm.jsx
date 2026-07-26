@@ -7,12 +7,14 @@ import { Label } from '@/components/ui/label';
 import { Select } from '@/components/ui/select';
 import { Calendar, MessageCircle, Phone, Mail, MapPin, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import { siteConfig, whatsappLink } from '@/config/site';
+import { COUNTRY_CODES } from '@/config/countryCodes';
 
 const initialForm = {
   parentName: '',
   studentName: '',
   yearGroup: '',
   curriculum: '',
+  countryCode: '+971',
   phone: '',
   message: '',
 };
@@ -55,9 +57,10 @@ export default function ContactForm() {
   };
 
   const openWhatsApp = () => {
+    const contactNumber = formData.phone ? `${formData.countryCode} ${formData.phone}` : 'not provided yet';
     const message = `Hi Ms. Preeti, I'm interested in Biology tutoring for my child (${
       formData.studentName || 'student'
-    }) in ${formData.yearGroup || 'Year [X]'}. Please get in touch.`;
+    }) in ${formData.yearGroup || 'Year [X]'}. Contact number: ${contactNumber}. Please get in touch.`;
     window.open(whatsappLink(message), '_blank');
   };
 
@@ -75,20 +78,20 @@ export default function ContactForm() {
             transition={{ duration: 0.6 }}
           >
             <span className="text-[#34E7C6] font-medium text-sm tracking-wider uppercase mb-3 block">Get Started Today</span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6">Book Your Free Discovery Session</h2>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6">Book Your Free Trial Class</h2>
             <p className="text-[#B9C4C0] text-lg leading-relaxed mb-8">
               Whether your child is struggling or aiming for top grades — in IGCSE, A-Level, CBSE, ICSE, NEET or
               Olympiads — a focused Biology plan makes all the difference.
             </p>
 
             <div className="bg-white/[0.03] backdrop-blur-sm rounded-2xl p-6 mb-8 border border-white/10">
-              <h3 className="text-white font-semibold mb-4">What happens in a discovery session:</h3>
+              <h3 className="text-white font-semibold mb-4">What happens in your trial class:</h3>
               <ul className="space-y-3">
                 {[
-                  "15-20 minute discussion to understand your child's goals",
-                  'Quick assessment of current Biology level',
+                  "Experience Ms. Preeti's teaching style in a live class",
+                  "Quick assessment of your child's current Biology level",
                   'Identify key strengths and gaps',
-                  'Receive a personalised learning pathway',
+                  'Walk away with a personalised learning pathway',
                   'No commitment required',
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3 text-[#D8E0DC]">
@@ -144,7 +147,7 @@ export default function ContactForm() {
                   </div>
                   <h3 className="font-heading text-2xl font-bold text-white mb-3">Thank You!</h3>
                   <p className="text-[#B9C4C0] mb-6">
-                    Ms. Preeti will be in touch within 24 hours to schedule your free discovery session.
+                    Ms. Preeti will be in touch within 24 hours to schedule your free trial class.
                   </p>
                   <button onClick={() => setStatus(STATUS.IDLE)} className="text-[#34E7C6] font-medium hover:underline">
                     Submit another enquiry
@@ -219,15 +222,30 @@ export default function ContactForm() {
                     <Label htmlFor="phone" className="text-[#D8E0DC] font-medium mb-2 block">
                       Phone / WhatsApp *
                     </Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      placeholder="+971 XX XXX XXXX"
-                      value={formData.phone}
-                      onChange={updateField('phone')}
-                      required
-                      className={fieldClass}
-                    />
+                    <div className="flex gap-3">
+                      <Select
+                        id="countryCode"
+                        value={formData.countryCode}
+                        onChange={updateField('countryCode')}
+                        className={`${fieldClass} w-[9.5rem] flex-shrink-0`}
+                        aria-label="Country code"
+                      >
+                        {COUNTRY_CODES.map((c) => (
+                          <option key={c.code} value={c.code} className="bg-[#0A0E12]">
+                            {c.label}
+                          </option>
+                        ))}
+                      </Select>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        placeholder="XX XXX XXXX"
+                        value={formData.phone}
+                        onChange={updateField('phone')}
+                        required
+                        className={`${fieldClass} flex-1`}
+                      />
+                    </div>
                   </div>
 
                   <div>
@@ -264,7 +282,7 @@ export default function ContactForm() {
                     ) : (
                       <Calendar className="w-5 h-5 mr-2" />
                     )}
-                    {status === STATUS.SUBMITTING ? 'Sending...' : 'Book Free Discovery Session'}
+                    {status === STATUS.SUBMITTING ? 'Sending...' : 'Book Free Trial Class'}
                   </Button>
 
                   <div className="relative">

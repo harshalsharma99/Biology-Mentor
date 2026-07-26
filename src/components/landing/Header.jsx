@@ -45,7 +45,7 @@ export default function Header() {
               </div>
               <div>
                 <span className="font-heading font-bold text-lg text-white">{siteConfig.businessName}</span>
-                <span className="text-xs block -mt-1 text-[#34E7C6] tracking-wide uppercase">Dubai &amp; UAE</span>
+                <span className="text-xs block -mt-1 text-[#34E7C6] tracking-wide uppercase">For UAE Students</span>
               </div>
             </a>
 
@@ -123,7 +123,7 @@ export default function Header() {
                 className="mt-4 bg-gradient-to-r from-[#34E7C6] to-[#6EE7A8] text-[#06120F] py-6 text-lg font-bold rounded-xl shadow-[0_0_24px_rgba(52,231,198,0.4)]"
               >
                 <Calendar className="w-5 h-5 mr-2" />
-                Book Free Discovery Session
+                Book Free Trial Class
               </Button>
             </nav>
           </div>

@@ -19,6 +19,7 @@ export default function Footer() {
                 <span className="text-[#34E7C6] text-xs">by {siteConfig.mentorName}</span>
               </div>
             </div>
+            <p className="text-[#34E7C6] italic mb-3">Helping students fall in love with Biology.</p>
             <p className="text-[#8A9A95] leading-relaxed mb-6 max-w-md">
               Specialised Biology coaching for IGCSE, A-Level, CBSE &amp; ICSE students in Dubai &amp; UAE. Also
               supporting NEET preparation, Science Olympiads &amp; competitive exams.

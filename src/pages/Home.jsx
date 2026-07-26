@@ -12,10 +12,11 @@ import FAQ from '@/components/landing/FAQ';
 import ContactForm from '@/components/landing/ContactForm';
 import Footer from '@/components/landing/Footer';
 import WhatsAppButton from '@/components/landing/WhatsAppButton';
+import ScrollToTopButton from '@/components/landing/ScrollToTopButton';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white font-sans antialiased">
+    <div className="min-h-screen bg-[#0A0E12] font-sans antialiased">
       <Header />
 
       <main>
@@ -47,6 +48,7 @@ export default function Home() {
 
       <Footer />
       <WhatsAppButton />
+      <ScrollToTopButton />
     </div>
   );
 }

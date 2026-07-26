@@ -57,7 +57,7 @@ export default function Hero() {
             >
               <span className="w-2 h-2 bg-[#B07CFF] rounded-full shadow-[0_0_8px_#B07CFF] animate-pulse" />
               <span className="text-sm text-[#D3BFFF] font-medium">
-                For IGCSE, A-Level, CBSE &amp; ICSE Students in Years 9-13 &middot; Dubai &amp; UAE
+                For IGCSE, A-Level, CBSE &amp; ICSE Students in Years 9-13
               </span>
             </motion.div>
 
@@ -115,7 +115,7 @@ export default function Hero() {
                 className="bg-gradient-to-r from-[#34E7C6] to-[#6EE7A8] hover:brightness-110 text-[#06120F] px-8 py-6 text-lg font-bold rounded-xl shadow-[0_0_30px_rgba(52,231,198,0.4)] hover:shadow-[0_0_40px_rgba(52,231,198,0.55)] hover:-translate-y-0.5"
               >
                 <Calendar className="w-5 h-5 mr-2" />
-                Book a Free Discovery Session
+                Book a Free Trial Class
               </Button>
               <a
                 href={whatsappLink('Hi, I would like to enquire about Biology tutoring for my child.')}

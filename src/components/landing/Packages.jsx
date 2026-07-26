@@ -150,7 +150,7 @@ export default function Packages() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center text-[#8A9A95] mt-10 text-sm"
         >
-          All plans include a free discovery session. Custom packages available on request.
+          All plans include a free trial class. Custom packages available on request.
         </motion.p>
       </div>
     </section>

@@ -8,9 +8,9 @@ const steps = [
   {
     number: '01',
     icon: ClipboardCheck,
-    title: 'Free Discovery Session',
+    title: 'Free Trial Class',
     description:
-      "We start with a friendly conversation and a short skills check to understand your child's current level, strengths, and gaps.",
+      "Join a live trial class with Ms. Preeti so you can see her teaching style firsthand, while we get a feel for your child's current level and goals.",
     highlight: 'No commitment required',
   },
   {

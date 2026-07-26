@@ -35,13 +35,18 @@ const faqs = [
       'Yes! Ms. Preeti has experience coaching students for NEET Biology, Science Olympiads, and other competitive exams. This can be part of a regular coaching plan or a dedicated preparation track.',
   },
   {
+    question: 'What happens if my child misses a class?',
+    answer:
+      "Just message Ms. Preeti on WhatsApp beforehand and we'll reschedule to another convenient slot — no penalty. We know school life gets busy.",
+  },
+  {
     question: 'Is there a minimum commitment period?',
     answer:
-      "We believe in flexibility. We recommend consistent weekly sessions for best results, but we don't lock you into long contracts. Start with a free discovery session and choose a plan that fits your goals.",
+      "We believe in flexibility. We recommend consistent weekly sessions for best results, but we don't lock you into long contracts. Start with a free trial class and choose a plan that fits your goals.",
   },
   {
     question: 'How do we get started?',
-    answer: `Simply book a free discovery session using the form on this page or message Ms. Preeti directly on WhatsApp (${siteConfig.phoneDisplay}). We'll assess your child's current level, discuss goals, and recommend the best plan — with no obligation.`,
+    answer: `Simply book a free trial class using the form on this page or message Ms. Preeti directly on WhatsApp (${siteConfig.phoneDisplay}). We'll assess your child's current level, discuss goals, and recommend the best plan — with no obligation.`,
   },
 ];
 
