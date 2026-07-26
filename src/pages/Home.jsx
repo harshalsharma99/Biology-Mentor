@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '@/components/landing/Header';
 import Hero from '@/components/landing/Hero';
+import CurriculaStrip from '@/components/landing/CurriculaStrip';
 import WhoIsThisFor from '@/components/landing/WhoIsThisFor';
 import Outcomes from '@/components/landing/Outcomes';
 import TeacherProfile from '@/components/landing/TeacherProfile';
@@ -19,6 +20,7 @@ export default function Home() {
 
       <main>
         <Hero />
+        <CurriculaStrip />
         <WhoIsThisFor />
         <Outcomes />
 

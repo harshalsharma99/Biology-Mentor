@@ -1,5 +1,5 @@
 import React from 'react';
-import { Microscope, Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { Dna, Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 import { siteConfig, whatsappLink } from '@/config/site';
 
 export default function Footer() {
@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 bg-[#4A9B6F] rounded-xl flex items-center justify-center">
-                <Microscope className="w-5 h-5 text-white" />
+                <Dna className="w-5 h-5 text-white" />
               </div>
               <div>
                 <span className="text-xl font-bold block">{siteConfig.businessName}</span>
@@ -37,7 +37,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-5 text-white">Programmes</h3>
+            <h3 className="font-semibold mb-5 text-white">Curricula We Cover</h3>
             <ul className="space-y-3 text-[#7A9A85]">
               <li>IGCSE Biology</li>
               <li>CBSE Biology</li>

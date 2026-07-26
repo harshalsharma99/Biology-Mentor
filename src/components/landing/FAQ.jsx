@@ -22,7 +22,7 @@ const faqs = [
   {
     question: 'How do you track and report progress?',
     answer:
-      'We conduct regular assessments, topic tests, and mock exams throughout the programme. Parents receive detailed progress updates so you always know exactly where your child stands.',
+      'We conduct regular assessments, topic tests, and mock exams throughout the term. Parents receive detailed progress updates so you always know exactly where your child stands.',
   },
   {
     question: 'Do you help with homework or only exam prep?',
@@ -32,16 +32,16 @@ const faqs = [
   {
     question: 'Do you offer NEET and Olympiad preparation?',
     answer:
-      'Yes! Ms. Preeti has experience coaching students for NEET Biology, Science Olympiads, and other competitive exams. This can be part of a regular coaching plan or a dedicated preparation programme.',
+      'Yes! Ms. Preeti has experience coaching students for NEET Biology, Science Olympiads, and other competitive exams. This can be part of a regular coaching plan or a dedicated preparation track.',
   },
   {
     question: 'Is there a minimum commitment period?',
     answer:
-      "We believe in flexibility. We recommend consistent weekly sessions for best results, but we don't lock you into long contracts. Start with a free diagnostic session and choose a plan that fits your goals.",
+      "We believe in flexibility. We recommend consistent weekly sessions for best results, but we don't lock you into long contracts. Start with a free discovery session and choose a plan that fits your goals.",
   },
   {
     question: 'How do we get started?',
-    answer: `Simply book a free diagnostic session using the form on this page or message Ms. Preeti directly on WhatsApp (${siteConfig.phoneDisplay}). We'll assess your child's current level, discuss goals, and recommend the best plan — with no obligation.`,
+    answer: `Simply book a free discovery session using the form on this page or message Ms. Preeti directly on WhatsApp (${siteConfig.phoneDisplay}). We'll assess your child's current level, discuss goals, and recommend the best plan — with no obligation.`,
   },
 ];
 

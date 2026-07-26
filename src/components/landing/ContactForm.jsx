@@ -72,14 +72,14 @@ export default function ContactForm() {
             transition={{ duration: 0.6 }}
           >
             <span className="text-[#4A9B6F] font-medium text-sm tracking-wider uppercase mb-3 block">Get Started Today</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Book Your Free Diagnostic Session</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Book Your Free Discovery Session</h2>
             <p className="text-[#A0B8A8] text-lg leading-relaxed mb-8">
               Whether your child is struggling or aiming for top grades — in IGCSE, A-Level, CBSE, ICSE, NEET or
               Olympiads — a focused Biology plan makes all the difference.
             </p>
 
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-white/10">
-              <h3 className="text-white font-semibold mb-4">What happens in a diagnostic session:</h3>
+              <h3 className="text-white font-semibold mb-4">What happens in a discovery session:</h3>
               <ul className="space-y-3">
                 {[
                   "15-20 minute discussion to understand your child's goals",
@@ -141,7 +141,7 @@ export default function ContactForm() {
                   </div>
                   <h3 className="text-2xl font-bold text-[#1A2E23] mb-3">Thank You!</h3>
                   <p className="text-[#556] mb-6">
-                    Ms. Preeti will be in touch within 24 hours to schedule your free diagnostic session.
+                    Ms. Preeti will be in touch within 24 hours to schedule your free discovery session.
                   </p>
                   <button
                     onClick={() => setStatus(STATUS.IDLE)}
@@ -276,7 +276,7 @@ export default function ContactForm() {
                     ) : (
                       <Calendar className="w-5 h-5 mr-2" />
                     )}
-                    {status === STATUS.SUBMITTING ? 'Sending...' : 'Book Free Diagnostic Session'}
+                    {status === STATUS.SUBMITTING ? 'Sending...' : 'Book Free Discovery Session'}
                   </Button>
 
                   <div className="relative">

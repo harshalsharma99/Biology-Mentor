@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, BookOpen, GraduationCap, Heart, Star, Trophy, Microscope } from 'lucide-react';
+import { Award, BookOpen, GraduationCap, Heart, Star, Trophy } from 'lucide-react';
 import { siteConfig } from '@/config/site';
+import PreetiPhoto from './PreetiPhoto';
 
 const credentials = [
   { icon: BookOpen, text: '10+ years teaching Biology across IGCSE, A-Level, CBSE & ICSE curricula to Years 9-13' },
@@ -10,29 +11,6 @@ const credentials = [
   { icon: GraduationCap, text: 'Guided 2000+ students into top medical, dental & life science programmes' },
   { icon: Heart, text: 'Patient, encouraging teaching style that builds genuine curiosity for Biology' },
 ];
-
-// Drop a real photo at /public/images/preeti-bhardwaj.jpg and it will replace this placeholder automatically.
-function TeacherPhoto() {
-  const [failed, setFailed] = useState(false);
-
-  if (failed) {
-    return (
-      <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#4A9B6F] to-[#3A8AC0] text-white">
-        <Microscope className="w-16 h-16 mb-3 opacity-90" />
-        <span className="text-3xl font-bold tracking-wide">PB</span>
-      </div>
-    );
-  }
-
-  return (
-    <img
-      src="/images/preeti-bhardwaj.jpg"
-      alt={`${siteConfig.mentorName} — The Biology Mentor`}
-      className="w-full h-full object-cover object-top"
-      onError={() => setFailed(true)}
-    />
-  );
-}
 
 export default function TeacherProfile() {
   return (
@@ -67,7 +45,7 @@ export default function TeacherProfile() {
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-[#4A9B6F]/15 to-[#5BB8E8]/15 blur-xl" />
 
               <div className="relative rounded-3xl overflow-hidden aspect-[4/5] bg-gradient-to-br from-[#E8F8F0] to-[#E8F4FB] shadow-xl">
-                <TeacherPhoto />
+                <PreetiPhoto className="w-full h-full" />
                 <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-[#1A2E23]/30 to-transparent" />
               </div>
 

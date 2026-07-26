@@ -74,8 +74,8 @@ export default function Packages() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-14"
         >
-          <span className="text-[#4A9B6F] font-medium text-sm tracking-wider uppercase mb-3 block">Programmes Offered</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1A2E23] mb-4">Choose the Right Programme for Your Child</h2>
+          <span className="text-[#4A9B6F] font-medium text-sm tracking-wider uppercase mb-3 block">What We Offer</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1A2E23] mb-4">Choose the Right Plan for Your Child</h2>
           <p className="text-[#556] text-lg">Flexible coaching for IGCSE, A-Level, CBSE, ICSE, NEET &amp; Olympiads</p>
         </motion.div>
 
@@ -147,7 +147,7 @@ export default function Packages() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center text-[#778] mt-10 text-sm"
         >
-          All programmes include a free diagnostic session. Custom packages available on request.
+          All plans include a free discovery session. Custom packages available on request.
         </motion.p>
       </div>
     </section>

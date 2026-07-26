@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Microscope, Menu, X, Phone, Calendar } from 'lucide-react';
+import { Dna, Menu, X, Phone, Calendar } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import { scrollToId } from '@/lib/scroll';
 
 const NAV_ITEMS = [
   { label: 'About', id: 'about' },
-  { label: 'Programmes', id: 'programmes' },
+  { label: 'Courses', id: 'programmes' },
   { label: 'Process', id: 'process' },
   { label: 'FAQ', id: 'faq' },
 ];
@@ -41,7 +41,7 @@ export default function Header() {
           <div className="flex items-center justify-between h-16 md:h-20">
             <a href="#" className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[#4A9B6F]">
-                <Microscope className="w-5 h-5 text-white" />
+                <Dna className="w-5 h-5 text-white" />
               </div>
               <div>
                 <span className="font-bold text-lg text-[#1A2E23]">{siteConfig.businessName}</span>
@@ -127,7 +127,7 @@ export default function Header() {
                 className="mt-4 bg-[#E07A5F] hover:bg-[#C86A50] text-white py-6 text-lg font-semibold rounded-xl shadow-lg shadow-[#E07A5F]/25"
               >
                 <Calendar className="w-5 h-5 mr-2" />
-                Book Free Diagnostic Session
+                Book Free Discovery Session
               </Button>
             </nav>
           </div>

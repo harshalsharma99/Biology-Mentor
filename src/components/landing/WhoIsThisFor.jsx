@@ -65,7 +65,7 @@ export default function WhoIsThisFor() {
             Is This Right For You?
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-[#1A2E23] mb-4">
-            This Programme Is Perfect For Students Who Are...
+            This Is Right For Students Who Are...
           </h2>
           <p className="text-[#556] text-lg">
             From school exams to NEET and Olympiads — we support every type of Biology learner

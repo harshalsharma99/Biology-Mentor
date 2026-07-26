@@ -6,9 +6,9 @@ const steps = [
   {
     number: '01',
     icon: ClipboardCheck,
-    title: 'Free Diagnostic Session',
+    title: 'Free Discovery Session',
     description:
-      "We start with a comprehensive assessment of your child's current level, strengths, and gaps through a discussion and quick diagnostic quiz.",
+      "We start with a friendly conversation and a short skills check to understand your child's current level, strengths, and gaps.",
     highlight: 'No commitment required',
   },
   {
@@ -48,7 +48,7 @@ export default function HowItWorks() {
           className="text-center max-w-2xl mx-auto mb-14"
         >
           <span className="text-[#4A7C59] font-medium text-sm tracking-wider uppercase mb-3 block">Simple Process</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1A2E23] mb-4">How the Programme Works</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1A2E23] mb-4">How It Works</h2>
           <p className="text-[#556] text-lg">
             A clear, structured path — whether you're targeting board exams, A-Levels, NEET or Olympiads
           </p>
