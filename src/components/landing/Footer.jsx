@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dna, Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { Dna, Phone, Mail, MapPin, MessageCircle, Instagram } from 'lucide-react';
 import { siteConfig, whatsappLink } from '@/config/site';
 
 export default function Footer() {
@@ -33,6 +33,15 @@ export default function Footer() {
                 aria-label="Chat on WhatsApp"
               >
                 <MessageCircle className="w-5 h-5 text-[#25D366] group-hover:text-white" />
+              </a>
+              <a
+                href={siteConfig.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-[#FF7CA3]/15 hover:bg-[#FF7CA3] border border-[#FF7CA3]/40 rounded-lg flex items-center justify-center transition-colors group"
+                aria-label="Follow on Instagram"
+              >
+                <Instagram className="w-5 h-5 text-[#FF7CA3] group-hover:text-white" />
               </a>
             </div>
           </div>

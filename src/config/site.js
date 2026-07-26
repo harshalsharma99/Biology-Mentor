@@ -8,6 +8,7 @@ export const siteConfig = {
   whatsappNumber: '971554709197',
   email: 'thebiologymentoruae@gmail.com',
   location: 'Dubai, UAE',
+  instagramUrl: 'https://www.instagram.com/biologymentoruae/',
   formspreeEndpoint: import.meta.env.VITE_FORMSPREE_ENDPOINT || '',
 };
 
