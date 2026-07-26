@@ -13,6 +13,7 @@ import ContactForm from '@/components/landing/ContactForm';
 import Footer from '@/components/landing/Footer';
 import WhatsAppButton from '@/components/landing/WhatsAppButton';
 import ScrollToTopButton from '@/components/landing/ScrollToTopButton';
+import BookingModal from '@/components/landing/BookingModal';
 
 export default function Home() {
   return (
@@ -49,6 +50,7 @@ export default function Home() {
       <Footer />
       <WhatsAppButton />
       <ScrollToTopButton />
+      <BookingModal />
     </div>
   );
 }

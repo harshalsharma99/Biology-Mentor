@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Dna, Menu, X, Phone, Calendar } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import { scrollToId } from '@/lib/scroll';
+import { useBookingModal } from '@/context/BookingModalContext';
 
 const NAV_ITEMS = [
   { label: 'About', id: 'about' },
@@ -15,6 +16,7 @@ const NAV_ITEMS = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { openModal } = useBookingModal();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -70,11 +72,11 @@ export default function Header() {
                 <span>{siteConfig.phoneDisplay}</span>
               </a>
               <Button
-                onClick={() => goTo('contact')}
+                onClick={openModal}
                 className="bg-gradient-to-r from-[#34E7C6] to-[#6EE7A8] hover:brightness-110 text-[#06120F] font-bold px-5 py-2 rounded-lg shadow-[0_0_20px_rgba(52,231,198,0.35)]"
               >
                 <Calendar className="w-4 h-4 mr-2" />
-                Book Free Session
+                Book Free Trial Class
               </Button>
             </div>
 
@@ -119,7 +121,10 @@ export default function Header() {
               </a>
 
               <Button
-                onClick={() => goTo('contact')}
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  openModal();
+                }}
                 className="mt-4 bg-gradient-to-r from-[#34E7C6] to-[#6EE7A8] text-[#06120F] py-6 text-lg font-bold rounded-xl shadow-[0_0_24px_rgba(52,231,198,0.4)]"
               >
                 <Calendar className="w-5 h-5 mr-2" />

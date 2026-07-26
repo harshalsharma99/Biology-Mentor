@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Check, Sparkles, Calendar, Clock } from 'lucide-react';
-import { scrollToId } from '@/lib/scroll';
+import { useBookingModal } from '@/context/BookingModalContext';
 
 const packages = [
   {
@@ -58,6 +58,8 @@ const packages = [
 const VIOLET = '#B07CFF';
 
 export default function Packages() {
+  const { openModal } = useBookingModal();
+
   return (
     <section className="py-20 md:py-28 bg-[#0A0E12] relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40rem] h-[30rem] bg-[#B07CFF]/8 rounded-full blur-3xl pointer-events-none" />
@@ -129,7 +131,7 @@ export default function Packages() {
                 </ul>
 
                 <Button
-                  onClick={() => scrollToId('contact')}
+                  onClick={openModal}
                   className={`w-full py-6 text-base font-bold rounded-xl transition-all duration-300 ${
                     pkg.popular
                       ? 'bg-gradient-to-r from-[#34E7C6] to-[#6EE7A8] hover:brightness-110 text-[#06120F] shadow-[0_0_24px_rgba(52,231,198,0.3)]'

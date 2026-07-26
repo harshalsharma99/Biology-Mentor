@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { MessageCircle, Calendar, ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { whatsappLink, siteConfig } from '@/config/site';
-import { scrollToId } from '@/lib/scroll';
+import { useBookingModal } from '@/context/BookingModalContext';
 
 const DNAHelix = () => (
   <svg viewBox="0 0 260 360" className="w-[70%] h-[70%]" fill="none">
@@ -39,6 +39,8 @@ const STATS = [
 ];
 
 export default function Hero() {
+  const { openModal } = useBookingModal();
+
   return (
     <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-[#0A0E12]">
       <div className="absolute inset-0 pointer-events-none">
@@ -111,7 +113,7 @@ export default function Hero() {
               className="flex flex-col sm:flex-row gap-4"
             >
               <Button
-                onClick={() => scrollToId('contact')}
+                onClick={openModal}
                 className="bg-gradient-to-r from-[#34E7C6] to-[#6EE7A8] hover:brightness-110 text-[#06120F] px-8 py-6 text-lg font-bold rounded-xl shadow-[0_0_30px_rgba(52,231,198,0.4)] hover:shadow-[0_0_40px_rgba(52,231,198,0.55)] hover:-translate-y-0.5"
               >
                 <Calendar className="w-5 h-5 mr-2" />
