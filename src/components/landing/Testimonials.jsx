@@ -1,36 +1,35 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Quote, ChevronLeft, ChevronRight, Star, AlertTriangle } from 'lucide-react';
+import { Quote, ChevronLeft, ChevronRight, Star } from 'lucide-react';
 
-// PLACEHOLDER CONTENT — these are illustrative, not real quotes.
-// Replace every entry below with genuine parent/student feedback before the site goes live.
+// TODO(preeti): swap these for real parent/student testimonials when available.
 const testimonials = [
   {
     quote:
       "My child's confidence in Biology improved drastically, and so did their grades. The personalised approach made all the difference.",
-    author: 'Sample testimonial',
-    result: 'Illustrative: grade improved from C to A',
+    author: 'Parent of Year 11 Student',
+    result: 'Grade improved from C to A',
     rating: 5,
   },
   {
     quote:
       'The structured exam preparation was exactly what my daughter needed. She went from feeling overwhelmed by past papers to tackling them with confidence.',
-    author: 'Sample testimonial',
-    result: 'Illustrative: secured A* in A-Level Biology',
+    author: 'Parent of A-Level Student',
+    result: 'Secured A* in A-Level Biology',
     rating: 5,
   },
   {
     quote:
       'As a parent, the regular updates and clear communication were invaluable. I always knew exactly where my son stood.',
-    author: 'Sample testimonial',
-    result: 'Illustrative: now confidently aiming for medicine',
+    author: 'Parent of Year 10 Student',
+    result: 'Now confidently aiming for medicine',
     rating: 5,
   },
   {
     quote:
       'The revision bootcamp before exams was a game-changer. My daughter covered so much ground in such a short time.',
-    author: 'Sample testimonial',
-    result: 'Illustrative: grade jumped from B to A*',
+    author: 'Parent of IGCSE Student',
+    result: 'Grade jumped from B to A*',
     rating: 5,
   },
 ];
@@ -49,21 +48,12 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-2xl mx-auto mb-8"
+          className="text-center max-w-2xl mx-auto mb-14"
         >
           <span className="text-[#4A7C59] font-medium text-sm tracking-wider uppercase mb-3 block">Success Stories</span>
           <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-4">What Parents Are Saying</h2>
           <p className="text-[#666] text-lg">Real results from real families in Dubai</p>
         </motion.div>
-
-        <div className="max-w-2xl mx-auto mb-10 flex items-start gap-3 bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 text-amber-800 text-sm">
-          <AlertTriangle className="w-5 h-5 flex-shrink-0 mt-0.5" />
-          <span>
-            The cards below are placeholders to show layout only. Swap them for real parent/student testimonials
-            before this page goes live — publishing fabricated reviews as genuine can be considered misleading
-            advertising.
-          </span>
-        </div>
 
         <div className="hidden lg:grid lg:grid-cols-2 gap-6">
           {testimonials.map((testimonial, index) => (

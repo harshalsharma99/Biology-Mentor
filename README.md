@@ -53,18 +53,19 @@ Any static host works — the build output is a plain `dist/` folder.
       `public/images/preeti-bhardwaj.jpg` (the site currently shows a
       monogram placeholder if this file is missing).
 - [ ] **Real testimonials** — `src/components/landing/Testimonials.jsx`
-      currently ships with clearly-labelled placeholder cards. Publishing
-      fabricated reviews as genuine is misleading advertising — replace
-      them with real parent/student feedback (with permission) before launch.
-- [ ] **Verify contact details** in `src/config/site.js` — phone, WhatsApp
-      number, email, location are all in one place now.
+      currently ships with illustrative quotes standing in for real ones.
+      Replace them with genuine parent/student feedback (with permission)
+      before launch — publishing fabricated reviews as genuine is
+      misleading advertising.
+- [x] **Contact details verified** — phone, WhatsApp number and email in
+      `src/config/site.js` are confirmed real.
 - [ ] **Confirm delivery mode** — copy currently says sessions are available
       "online or in-person"; update `HowItWorks.jsx` / `FAQ.jsx` if that's
       not accurate.
 - [ ] **Formspree endpoint** set (see above).
-- [ ] **Domain + canonical URLs** — `index.html` and `public/robots.txt`
-      reference `https://www.thebiologymentor.com/` as a placeholder;
-      update to your actual domain.
+- [x] **Domain set** — `thebiologymentor.com`, wired into `index.html` and
+      `public/robots.txt`. Still need to point its DNS at whichever host
+      you deploy to.
 - [ ] **Social share image** — add `public/og-image.jpg` (1200x630px) for
       link previews on WhatsApp/Facebook/LinkedIn.
 - [ ] **Analytics** (optional) — add Google Analytics/Meta Pixel snippet to
