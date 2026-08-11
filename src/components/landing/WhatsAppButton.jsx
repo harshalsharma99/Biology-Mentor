@@ -12,7 +12,11 @@ export default function WhatsAppButton() {
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1, type: 'spring', stiffness: 200 }}
-      className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#20BD5A] rounded-full flex items-center justify-center shadow-[0_0_24px_rgba(37,211,102,0.5)] hover:shadow-[0_0_32px_rgba(37,211,102,0.65)] transition-all duration-300 group"
+      className="fixed z-50 w-14 h-14 bg-[#25D366] hover:bg-[#20BD5A] rounded-full flex items-center justify-center shadow-[0_0_24px_rgba(37,211,102,0.5)] hover:shadow-[0_0_32px_rgba(37,211,102,0.65)] transition-all duration-300 group"
+      style={{
+        bottom: 'calc(1.5rem + env(safe-area-inset-bottom, 0px))',
+        right: 'calc(1.5rem + env(safe-area-inset-right, 0px))',
+      }}
       aria-label="Chat on WhatsApp"
     >
       <MessageCircle className="w-7 h-7 text-white" />
