@@ -24,11 +24,11 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      # Project pages are served from /<repo-name>/, not domain root, so assets
-      # need that base path baked in. This does NOT affect the config used for
-      # the eventual thebiologymentor.com deploy (that build uses the default
-      # base of "/").
-      - run: npm run build -- --base=/Biology-Mentor/
+      # Served from thebiologymentor.com (domain root) via the public/CNAME
+      # file, so assets use the default base of "/". Once the custom domain
+      # verifies, GitHub auto-redirects the old harshalsharma99.github.io/
+      # Biology-Mentor/ preview URL here.
+      - run: npm run build
       - uses: actions/configure-pages@v5
         with:
           # First run on this repo — no Pages site exists yet, so tell the
