@@ -29,6 +29,8 @@ jobs:
       # verifies, GitHub auto-redirects the old harshalsharma99.github.io/
       # Biology-Mentor/ preview URL here.
       - run: npm run build
+        env:
+          VITE_FORMSPREE_ENDPOINT: ${{ secrets.VITE_FORMSPREE_ENDPOINT }}
       - uses: actions/configure-pages@v5
         with:
           # First run on this repo — no Pages site exists yet, so tell the

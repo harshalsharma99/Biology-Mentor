@@ -44,7 +44,7 @@ export default function ContactForm() {
       const response = await fetch(siteConfig.formspreeEndpoint, {
         method: 'POST',
         headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, source: 'full-contact-form' }),
       });
 
       if (!response.ok) throw new Error('Submission failed');
